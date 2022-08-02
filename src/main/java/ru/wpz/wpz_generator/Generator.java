@@ -23,7 +23,7 @@ public class Generator {
 
     public void methodGenerator() {
         try {
-            ExecutorService executorService = Executors.newFixedThreadPool(5);
+            ExecutorService executorService = Executors.newFixedThreadPool(10);
             for (int i = 0; i < 10; i++) {
                 executorService.execute(new RunnableImpl());
             }
