@@ -22,16 +22,11 @@ public class Generator {
         put(377, 0); put(378, 0); put(379, 0); put(380, 0); put(381, 0); put(382, 0); put(383, 0); put(384, 0); put(385, 0); put(386, 0); put(387, 0);}};
 
     public void methodGenerator() {
-        try {
-            ExecutorService executorService = Executors.newFixedThreadPool(10);
-            for (int i = 0; i < 10; i++) {
-                executorService.execute(new RunnableImpl());
-            }
-            executorService.shutdown();
-            executorService.awaitTermination(5, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
+        for (int i = 0; i < 10; i++) {
+            executorService.execute(new RunnableImpl());
         }
+        executorService.shutdown();
     }
 
     public void creatMessage() throws Exception {
